@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="main" style="height:400px;width:500px;"></div>
+<script src="__PUBLIC__/echarts/echarts.js"></script>
+<script type="text/javascript">
+    var arr = <{$arr}> ;
+    require.config({
+        paths: {
+            echarts: '__PUBLIC__/echarts'
+        }
+    });
+    require(
+        [
+            'echarts',
+            'echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
+            'echarts/chart/bar'
+        ],
+        function (ec) {
+            var myChart = ec.init(document.getElementById('main'));
+            var option = {
+                title: {
+                    text: "我自己的标题",
+                    subtext: "副标题"
+                },
+                tooltip: {
+                    trigger: "axis"
+                },
+                legend: {
+                    data: ["成功", "失败", "总次数"]
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {
+                            show: false
+                        },
+                        dataView: {
+                            show: true,
+                            readOnly: true
+                        },
+                        magicType: {
+                            show: true,
+                            type: ["line", "bar"]
+                        },
+                        restore: {
+                            show: true
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                calculable: false,
+                xAxis: [
+                    {
+                        type: "category",
+                        boundaryGap: false,
+                        data: arr
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: "value",
+                        name: "单位"
+                    }
+                ],
+                series: [
+                    {
+                        name: "成功",
+                        type: "line",
+                        data: [11, 11, 15, 13, 12, 13, 10]
+                    },
+                    {
+                        name: "失败",
+                        type: "line",
+                        data: [1, 0, 0, 0, 0, 0, 0]
+                    },
+                    {
+                        type: "line",
+                        name: "总次数",
+                        data: [13, 11, 15, 13, 12, 13, 10]
+                    }
+                ]
+            }
+            myChart.setOption(option);
+        }
+    );
+</script>
+
+</body>
+</html>
