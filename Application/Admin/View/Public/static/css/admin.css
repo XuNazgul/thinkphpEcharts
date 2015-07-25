@@ -1,0 +1,58 @@
+/* 
+Author: Start Bootstrap - http://startbootstrap.com
+'SB Admin' HTML Template by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0. 
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+
+/* ATTN: This is mobile first CSS - to update 786px and up screen width use the media query near the bottom of the document! */
+
+/* Global Styles */
+
+body {
+    margin-top: 50px;
+    background-color: #e5e5e5;
+}
+
+#wrapper {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 137px;
+    min-height: 700px;
+}
+
+#page-wrapper {
+    height: 100%;
+    border:1px solid rgba(57, 86, 87, 0.51);
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: #ffffff;
+}
+
+/* dropdown */
+.dropdown {
+    font-size: 15px;
+    text-align: center;
+}
+
+.dropdown>a:hover,
+.dropdown>a:focus {
+    color: #404040;
+    background-color: #fffdfe;
+}
+/* Side Nav */
+.side-nav {
+    margin-left: -100px;
+    left: 130px;
+    width: 110px;
+    position: fixed;
+    top: 80px;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #e5e5e5;
+    overflow-y: auto;
+}
+
+
