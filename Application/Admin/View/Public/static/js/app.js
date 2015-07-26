@@ -17,7 +17,7 @@ jQuery(document).ready(function () {
         domain = myURL.match(durl);
         var result = myURL.replace("http://"+domain[1],"");
         if (links == result) {
-            myNav.eq(i).parents(".dropdown").addClass("open");
+            myNav.eq(i).parents(".dropdown").addClass("active");
         }
     }
 });

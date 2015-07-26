@@ -15,44 +15,66 @@ body {
     background-color: #e5e5e5;
 }
 
-#wrapper {
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 137px;
-    min-height: 700px;
-}
+/* Edit Below to Customize Widths > 768px */
+@media (min-width:768px) {
 
-#page-wrapper {
-    height: 100%;
-    border:1px solid rgba(57, 86, 87, 0.51);
-    border-radius: 5px;
-    padding: 5px 15px;
-    background-color: #ffffff;
-}
+    /* Wrappers */
+    #wrapper {
+        padding-top: 30px;
+        padding-right: 30px;
+        padding-left: 130px;
+    }
+    /* page-wrapper */
+    #page-wrapper {
+        font-size: 15px;
+        min-height: 786px;
+        border: 1px solid rgba(57, 86, 87, 0.51);
+        border-radius: 5px;
+        padding: 5px 15px;
+        background-color: #ffffff;
+    }
 
-/* dropdown */
-.dropdown {
-    font-size: 15px;
-    text-align: center;
-}
+    /* Side Nav */
+    .side-nav {
+        margin-left: -100px;
+        left: 130px;
+        width: 100px;
+        position: fixed;
+        top: 80px;
+        height: 100%;
+        border-radius: 5px;
+        border: none;
+        background-color: #e5e5e5;
+        overflow-y: auto;
+    }
+    /* dropdown */
+    .side-nav>li.dropdown {
+        font-size: 15px;
+        text-align: center;
+    }
+    /* dropdown  a*/
+    .side-nav>li.dropdown>a:hover,
+    .side-nav>li.dropdown>a:focus {
+        color: #345df5;
+        background-color: #ffffff;
+    }
 
-.dropdown>a:hover,
-.dropdown>a:focus {
-    color: #404040;
-    background-color: #fffdfe;
-}
-/* Side Nav */
-.side-nav {
-    margin-left: -100px;
-    left: 130px;
-    width: 110px;
-    position: fixed;
-    top: 80px;
-    height: 100%;
-    border-radius: 5px;
-    border: none;
-    background-color: #e5e5e5;
-    overflow-y: auto;
-}
+    /* change */
+    .page-breadcrumb>div.change-breadcrumb{
+        width: 83%;
+        float:left;
+        background-color: transparent;
+    }
+    .page-breadcrumb>div.change-text{
+        width: 5%;
+        float:left;
+    }
+    .page-breadcrumb>div.btn-group{
+        float:left;
+        width: 10%;
+    }
+    .bg-breadcrumb{
+        background-color: transparent;
+    }
 
-
+}
