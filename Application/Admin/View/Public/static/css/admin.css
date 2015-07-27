@@ -20,17 +20,16 @@ body {
 
     /* Wrappers */
     #wrapper {
-        padding-top: 30px;
-        padding-right: 30px;
-        padding-left: 130px;
+        padding: 30px 30px 100px 130px;
+        min-width: 768px;
     }
     /* page-wrapper */
     #page-wrapper {
         font-size: 15px;
-        min-height: 786px;
+        min-height: 700px;
         border: 1px solid rgba(57, 86, 87, 0.51);
         border-radius: 5px;
-        padding: 5px 15px;
+        padding: 15px 25px;
         background-color: #ffffff;
     }
 
@@ -59,22 +58,8 @@ body {
         background-color: #ffffff;
     }
 
-    /* change */
-    .page-breadcrumb>div.change-breadcrumb{
-        width: 83%;
-        float:left;
-        background-color: transparent;
+    select {
+        min-height: 30px;
+        border: 1px solid #cccccc;
     }
-    .page-breadcrumb>div.change-text{
-        width: 5%;
-        float:left;
-    }
-    .page-breadcrumb>div.btn-group{
-        float:left;
-        width: 10%;
-    }
-    .bg-breadcrumb{
-        background-color: transparent;
-    }
-
 }

@@ -1,17 +1,17 @@
 <include file="Public/header" title="后台主页" />
 <div id="page-wrapper">
-    <div class="page-breadcrumb">
-        <div class="change-breadcrumb">
-            <ol class="breadcrumb bg-breadcrumb">
+    <div class="row">
+        <div class="col-md-8">
+            <ol class="breadcrumb bg-breadcrumb" style="background-color: transparent">
                 <li><a href="{:U('Dashboard/transactionStatus')}">首页</a></li>
                 <li class="active">交易状态</li>
             </ol>
         </div>
-        <div class="change-text">
-            <h5>切换产品:</h5>
+        <div class="col-md-2">
+            <p class="text-right" style="padding-top: 8px">切换产品:</p>
         </div>
         <!-- Single button -->
-        <div class="btn-group">
+        <div class="col-md-2">
             <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 GrennT_asia <span class="caret"></span>
             </button>
@@ -24,13 +24,38 @@
             </ul>
         </div>
     </div>
-    <br>
-    <div>
+    <div style="clear: both" >
         <p>
             <h3>交易状态</h3>
         </p>
     </div>
 
+    <div class="well">
+        <div class="row">
+            <div class="col-md-4">
+                <label class="hydra-label" for="sel_sites">站点:</label>
+                <select class="hydra-select" id="sel_sites"><option value="114">LiTong_China</option></select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="hydra-label" for="sel_operators">操作员:</label>
+                <select class="hydra-select" id="sel_operators">
+                    <option value="-1">- 选择操作员 -</option>
+                    <option value="560">marco</option>
+                    <option value="757">billgreenT1</option>
+                    <option value="758">wanIRT1</option>
+                    <option value="1117">ltcomputer</option>
+                    <option value="1318">litonghk</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="myecharts" style="height:400px;width:800px;"></div>
+
+
 </div>
+
+<include file="Public/myecharts"/>
 
 <include file="Public/footer" />

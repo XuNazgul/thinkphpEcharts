@@ -1,0 +1,109 @@
+<!--- MYECHARTS --->
+<script src="__PUBLIC__/echarts/echarts.js"></script>
+<script type="text/javascript">
+    var arr = <{$arr}> ;
+    var arr1 = <{$arr1}> ;
+    var arr2 = <{$arr2}> ;
+    var arr3 = <{$arr3}> ;
+
+    require.config({
+        paths: {
+            echarts: '__PUBLIC__/echarts'
+        }
+    });
+    require(
+            [
+                'echarts',
+                '../../../../Public/echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
+                'echarts/chart/bar'
+            ],
+            function (ec) {
+                var myChart = ec.init(document.getElementById('myecharts'));
+                var option = {
+                    title: {
+                        text: "我自己的标题",
+                        subtext: "副标题"
+                    },
+                    tooltip: {
+                        trigger: "axis"
+                    },
+                    legend: {
+                        data: ["成功", "失败", "总次数"]
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            mark: {
+                                show: false
+                            },
+                            dataView: {
+                                show: true,
+                                readOnly: true
+                            },
+                            magicType: {
+                                show: true,
+                                type: ["line", "bar"]
+                            },
+                            restore: {
+                                show: true
+                            },
+                            saveAsImage: {
+                                show: true
+                            }
+                        }
+                    },
+                    calculable: false,
+                    xAxis: [
+                        {
+                            type: "category",
+                            boundaryGap: false,
+                            splitLine: {
+                                show: false
+                            },
+                            axisLabel: {
+                                show: true,
+                                rotate: -45
+                            },
+                            data: arr
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: "value",
+                            name: "单位",
+                            splitLine: {
+                                lineStyle: {
+                                    width: 1,
+                                    color: "rgb(244, 246, 247)"
+                                }
+                            },
+                            splitArea: {
+                                areaStyle: {
+                                    type: "default",
+                                    color: "rgb(184, 214, 188)"
+                                }
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name: "成功",
+                            type: "line",
+                            data: arr1
+                        },
+                        {
+                            name: "失败",
+                            type: "line",
+                            data: arr2
+                        },
+                        {
+                            type: "line",
+                            name: "总次数",
+                            data: arr3
+                        }
+                    ]
+                }
+                myChart.setOption(option);
+            }
+    );
+</script>

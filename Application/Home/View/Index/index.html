@@ -5,10 +5,15 @@
     <title></title>
 </head>
 <body>
-<div id="main" style="height:400px;width:500px;"></div>
+123
+<div id="main" style="height:400px;width:800px;"></div>
 <script src="__PUBLIC__/echarts/echarts.js"></script>
 <script type="text/javascript">
     var arr = <{$arr}> ;
+    var arr1 = <{$arr1}> ;
+    var arr2 = <{$arr2}> ;
+    var arr3 = <{$arr3}> ;
+
     require.config({
         paths: {
             echarts: '__PUBLIC__/echarts'
@@ -60,30 +65,49 @@
                     {
                         type: "category",
                         boundaryGap: false,
+                        splitLine: {
+                            show: false
+                        },
+                        axisLabel: {
+                            show: true,
+                            rotate: -45
+                        },
                         data: arr
                     }
                 ],
                 yAxis: [
                     {
                         type: "value",
-                        name: "单位"
+                        name: "单位",
+                        splitLine: {
+                            lineStyle: {
+                                width: 1,
+                                color: "rgb(244, 246, 247)"
+                            }
+                        },
+                        splitArea: {
+                            areaStyle: {
+                                type: "default",
+                                color: "rgb(184, 214, 188)"
+                            }
+                        }
                     }
                 ],
                 series: [
                     {
                         name: "成功",
                         type: "line",
-                        data: [11, 11, 15, 13, 12, 13, 10]
+                        data: arr1
                     },
                     {
                         name: "失败",
                         type: "line",
-                        data: [1, 0, 0, 0, 0, 0, 0]
+                        data: arr2
                     },
                     {
                         type: "line",
                         name: "总次数",
-                        data: [13, 11, 15, 13, 12, 13, 10]
+                        data: arr3
                     }
                 ]
             }
